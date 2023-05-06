@@ -5,8 +5,6 @@ let randWords =
   "https://random-word-api.herokuapp.com/word?key=06DQTLAP&number=1";
 
 function setup() {
-  noCanvas();
-
   // loadJSON(giphyAPI, gotData);
 
   let promises = [];

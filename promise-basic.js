@@ -34,8 +34,6 @@ async function harry(){
     const users = await response.json();
     console.log('users resolved')
     return users;
-
-    // return "harry";
 }
 
 console.log("Before calling harry")
