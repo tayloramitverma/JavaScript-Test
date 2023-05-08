@@ -27,10 +27,12 @@ console.log("boundFn:", boundFn);
 boundFn(302012);
 
 /**
- * Bind Polifill
+ * Polifill of funtion bind
+ * @param  {...any} arg1
+ * @returns
  */
 
-Function.prototype.mybind = function (...arg1) {
+Function.prototype.myBind = function (...arg1) {
   let obj = this;
   let params = arg1.slice(1);
   return function (...arg2) {
@@ -38,6 +40,6 @@ Function.prototype.mybind = function (...arg1) {
   };
 };
 
-let myBoundFn = getPerson.mybind(Person, "Rajasthan", "India");
+let myBoundFn = getPerson.myBind(Person, "Rajasthan", "India");
 
 myBoundFn(302012);
