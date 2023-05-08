@@ -56,8 +56,8 @@ Promise.all(promiseArr)
  */
 
 function largestDistance(X, Y) {
-  let maxDistance = -1;
   let lastYIndex = X.indexOf(Y);
+  let maxDistance = -1;
 
   console.log("maxDistance", maxDistance);
   console.log("lastYIndex", lastYIndex);
@@ -103,9 +103,9 @@ function findDistinctDuplicates(input1, input2) {
 
   let resultArr = [];
 
-  for (let [el, count] of Object.entries(counts)) {
+  for (let [char, count] of Object.entries(counts)) {
     if (count > 1) {
-      resultArr.push(el);
+      resultArr.push(char);
     }
   }
 
