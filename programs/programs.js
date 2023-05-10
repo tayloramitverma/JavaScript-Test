@@ -208,17 +208,17 @@ console.log("nthPrime Number is:", nthPrime(10));
 
 function findPairs(array, target) {
   const pairs = [];
-  
+
   // loop through the array of numbers
-  for(let i = 0; i < array.length; i++) {
-    for(let j = i + 1; j < array.length; j++) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
       // check if the sum of the two numbers is equal to the target
-      if(array[i] + array[j] === target) {
+      if (array[i] + array[j] === target) {
         pairs.push([array[i], array[j]]);
       }
     }
   }
-  
+
   return pairs;
 }
 
@@ -228,30 +228,29 @@ const target = 12;
 const pairs = findPairs(array, target);
 console.log(pairs); // output: [[2, 10], [4, 8]]
 
-
 /**
  * How do you check if a given string is a palindrome
  */
 
-const mapOfString = str => {
-  const map ={};
-  str.split("").forEach(i =>  map[i] = map[i] + 1 || 1);
+const mapOfString = (str) => {
+  const map = {};
+  str.split("").forEach((i) => (map[i] = map[i] + 1 || 1));
   return map;
- } 
- 
- console.log(mapOfString('ffsss'))
- 
- const checkPalindrome = (string1, string2) => {
-    const mapObject1 = mapOfString(string1);
-    const mapObject2 = mapOfString(string2)
-    if(mapObject1.length !== mapObject2.length){
-        return false;
+};
+
+console.log(mapOfString("ffsss"));
+
+const checkPalindrome = (string1, string2) => {
+  const mapObject1 = mapOfString(string1);
+  const mapObject2 = mapOfString(string2);
+  if (mapObject1.length !== mapObject2.length) {
+    return false;
+  }
+  for (let char in mapObject1) {
+    if (mapObject1[char] !== mapObject2[char]) {
+      return false;
     }
-    for(let i in mapObject1){
-        if(mapObject1[i] !== mapObject2[i]){
-            return false;
-        }
-    }
-    return true;
- }
- console.log(checkPalindrome("ffss","sfsf"));
+  }
+  return true;
+};
+console.log(checkPalindrome("ffss", "sfsf"));
