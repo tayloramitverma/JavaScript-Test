@@ -65,12 +65,20 @@ console.log("greeting", greeting);
  */
 
 //Object.create():
-const myPrototype = {
+const MyPrototype = {
   prop1: "value1",
   prop2: "value2",
 };
 
-const myObjectCreate = Object.create(myPrototype);
+const myObjectCreate = Object.create(MyPrototype);
+
+delete myObjectCreate.prop1;
+/**
+ * this will delete perfectly,
+ * but the inherited prop1 property from MyPrototype will still there.
+ * so you should delete that too.
+ * */
+delete MyPrototype.prop1;
 
 console.log("myObjectCreate", myObjectCreate);
 

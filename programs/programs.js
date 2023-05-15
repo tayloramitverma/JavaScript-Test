@@ -1,6 +1,3 @@
-const arrOne = [1, 2, 2, 4, 6, 7];
-const arrTwo = [2, 3, 3, 5, 5, 7, 9, 9];
-
 function getCombine(arrOne, arrTwo) {
   //let arrComb = [...arrOne, ...arrTwo];
 
@@ -16,10 +13,14 @@ function getCombine(arrOne, arrTwo) {
 
   combinedArr.sort();
 
-  console.log(combinedArr);
+  return combinedArr;
 }
 
-getCombine(arrOne, arrTwo);
+const arrOne = [1, 2, 2, 4, 6, 7];
+const arrTwo = [2, 3, 3, 5, 5, 7, 9, 9];
+
+console.log("getCombine", getCombine(arrOne, arrTwo));
+console.log("first - end");
 
 //second tech question
 
@@ -48,6 +49,8 @@ Promise.all(promiseArr)
     console.log("results", results);
   })
   .catch((err) => console.log(err));
+
+console.log("second - end");
 
 /**
  * you are given a string X and a string containing single character Y.
@@ -85,7 +88,7 @@ let Y = "Y";
 let LDResult = largestDistance(X, Y);
 
 console.log("largestDistance", LDResult);
-
+console.log("third - end");
 /**
  * you are given an integer array of N positive elements.
  * any integer in the array can occur multiple times.
@@ -117,7 +120,7 @@ const input2 = [2, 3, 4, 5, 2, 4, 7, 8, 9];
 const distintResult = findDistinctDuplicates(input1, input2);
 
 console.log("distintResult", distintResult);
-
+console.log("four - end");
 // anagram program using JavaScript
 
 function checkAnagrams(str1, str2) {
@@ -165,7 +168,7 @@ function checkAnagrams(str1, str2) {
 }
 
 console.log(checkAnagrams("rail safety", "fairy tales"));
-
+console.log("five - end");
 // Prime Number
 
 function isPrime(num) {
@@ -200,7 +203,7 @@ function nthPrime(n) {
 
 console.log("Prime number :", isPrime(5));
 console.log("nthPrime Number is:", nthPrime(10));
-
+console.log("six - end");
 /**
  * example of a JavaScript code that makes pairs of numbers whose sum is equal to 15
  * without using a for loop:
@@ -228,6 +231,7 @@ const target = 12;
 const pairs = findPairs(array, target);
 console.log(pairs); // output: [[2, 10], [4, 8]]
 
+console.log("sevan - end");
 /**
  * How do you check if a given string is a palindrome
  */
@@ -254,3 +258,5 @@ const checkPalindrome = (string1, string2) => {
   return true;
 };
 console.log(checkPalindrome("ffss", "sfsf"));
+
+console.log("eat - end");
