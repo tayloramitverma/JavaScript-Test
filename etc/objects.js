@@ -1,29 +1,32 @@
+console.time();
 /**
  * Object Deep and Shallow copy
  */
 //Object literal notation:
 let emp = {
-  name: "Amit",
+  name: "Vikash",
   salary: {
     fixed: 10000,
     variable: 1000,
   },
 };
+let newAssignOp = emp;
 
-let newAssignEmp = Object.assign({}, emp);
+let newObjAssign = Object.assign({}, emp);
 let newSpreadEmp = { ...emp };
 
 let newDeepEmp = JSON.parse(JSON.stringify(emp));
 let newStructuredEmp = structuredClone(emp);
 
-emp.name = "Divya";
+emp.name = "Suraj";
 emp.salary.fixed = 20000;
 
 console.log("Orignal Emp", emp);
-console.log("newAssignEmp", newAssignEmp);
-console.log("newSpreadEmp", newSpreadEmp);
-console.log("newDeepEmp", newDeepEmp);
-console.log("newStructuredEmp", newStructuredEmp);
+console.log("newAssignOp Emp", newAssignOp);
+console.log("newObjAssign Emp", newObjAssign);
+console.log("newSpread Emp", newSpreadEmp);
+console.log("newDeep Emp", newDeepEmp);
+console.log("newStructured Emp", newStructuredEmp);
 
 /**
  * Prototype Chain
@@ -96,3 +99,5 @@ class PersonNew {
 const johnNew = new PersonNew("Amit", 30);
 
 johnNew.getFullName();
+
+console.timeEnd();
