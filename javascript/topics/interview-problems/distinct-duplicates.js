@@ -1,4 +1,11 @@
-// Run: npm run js:distinct-duplicates
+/**
+ * Distinct elements that appear more than once
+ * Run: npm run js:distinct-duplicates
+ *
+ * Problem: From array, return values occurring >1 time (in increasing order).
+ * Approach: Frequency map → filter count > 1 → sort numerically.
+ * Time: O(n) | Space: O(n)
+ */
 
 function findDistinctDuplicates(input1, input2) {
   const counts = {};
@@ -22,4 +29,4 @@ function findDistinctDuplicates(input1, input2) {
 const input1 = 9;
 const input2 = [2, 3, 4, 5, 2, 4, 7, 8, 9];
 
-console.log("distinct duplicates", findDistinctDuplicates(input1, input2));
+console.log("distinct duplicates:", findDistinctDuplicates(input1, input2));

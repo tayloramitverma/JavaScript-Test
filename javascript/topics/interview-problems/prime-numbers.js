@@ -1,4 +1,11 @@
-// Run: npm run js:prime-numbers
+/**
+ * Prime check and nth prime
+ * Run: npm run js:prime-numbers
+ *
+ * isPrime: test divisors from 2 to sqrt(n) — if any divides evenly, not prime.
+ * nthPrime: increment candidate until we've found n primes.
+ * Time isPrime: O(√n) | nthPrime: roughly O(n √n)
+ */
 
 function isPrime(num) {
   if (num <= 1) return false;

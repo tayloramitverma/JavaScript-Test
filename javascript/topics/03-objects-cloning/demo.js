@@ -1,3 +1,11 @@
+/**
+ * Object cloning, prototype chain, classes
+ * Run: npm run js:cloning
+ *
+ * Demonstrates: reference vs shallow vs deep copy, mutation side effects,
+ * constructor + prototype, Object.create, class syntax.
+ */
+
 console.time();
 
 // =============================================================================

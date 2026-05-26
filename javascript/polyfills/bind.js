@@ -1,6 +1,14 @@
 /**
- * Call, Apply & Bind
+ * call, apply, bind usage + bind polyfill
+ * Run: npm run js:polyfill-bind
+ *
+ * call(ctx, a, b)   — invoke now, comma args
+ * apply(ctx, [args]) — invoke now, array args
+ * bind(ctx, ...partial) — returns NEW function with fixed this + partial args
+ *
+ * Polyfill pattern: return wrapper that calls original with apply + merged args.
  */
+
 let Person = {
   firstname: "Amit",
   lastName: "Verma",
@@ -8,38 +16,23 @@ let Person = {
 
 const getPerson = function (State, Country, ZipCode) {
   console.log(
-    `First Name: ${this.firstname}, 
-    Last Name: ${this.lastName}, 
-    State: ${State}, 
-    Country: ${Country}, 
-    Zip Code: ${ZipCode}`
+    `${this.firstname} ${this.lastName}, ${State}, ${Country}, ${ZipCode}`
   );
 };
 
+console.log("--- native call / apply / bind ---");
 getPerson.call(Person, "Rajasthan", "India", 302012);
-
 getPerson.apply(Person, ["Rajasthan", "India", 302012]);
 
-let boundFn = getPerson.bind(Person, "Rajasthan", "India");
-
-console.log("boundFn:", boundFn);
-
+const boundFn = getPerson.bind(Person, "Rajasthan", "India");
 boundFn(302012);
 
-/**
- * Polifill of funtion bind
- * @param  {...any} arg1
- * @returns
- */
-
-Function.prototype.myBind = function (...arg1) {
-  let obj = this;
-  let params = arg1.slice(1);
-  return function (...arg2) {
-    obj.apply(arg1[0], [...params, ...arg2]);
+Function.prototype.myBind = function (context, ...partialArgs) {
+  const fn = this;
+  return function (...laterArgs) {
+    return fn.apply(context, [...partialArgs, ...laterArgs]);
   };
 };
 
-let myBoundFn = getPerson.myBind(Person, "Rajasthan", "India");
-
-myBoundFn(302012);
+console.log("--- myBind ---");
+getPerson.myBind(Person, "Rajasthan", "India")(302012);

@@ -1,4 +1,12 @@
-// Pretend that this response is coming from the server
+/**
+ * Callback pattern — async control flow before Promises
+ * Browser: open callback-students.html
+ *
+ * enrollStudent pushes to array after 1s, then calls callback.
+ * getStudents reads list after 5s more and renders to DOM.
+ * Shows "callback hell" risk when chaining many async steps.
+ */
+
 const students = [
   { name: "harry", subject: "JavaScript" },
   { name: "Rohan", subject: "Machine Learning" },
@@ -16,14 +24,13 @@ function getStudents() {
   setTimeout(function () {
     let str = "";
     students.forEach(function (student) {
-      str += `<li> ${student.name}</li>`;
+      str += `<li>${student.name}</li>`;
     });
     document.getElementById("students").innerHTML = str;
     console.log("Students have been fetched");
   }, 5000);
 }
 
-let newStudent = { name: "Sunny", subject: "Python" };
+const newStudent = { name: "Sunny", subject: "Python" };
 
 enrollStudent(newStudent, getStudents);
-// getStudents();

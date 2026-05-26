@@ -1,24 +1,24 @@
-String.prototype.CheckPalindrome = function () {
-  let str = this;
-  //let reverseStr = str.split("").reverse().join("");
+/**
+ * Polyfill-style: check palindrome on string
+ * Run: npm run js:polyfill-palindrome
+ *
+ * Classic approach: two pointers i=0, j=length-1, compare chars inward.
+ * This demo builds reversed string for comparison (O(n) time/space).
+ */
+
+String.prototype.checkPalindrome = function () {
+  const str = this;
   let reverseStr = "";
   for (let i = str.length - 1; i >= 0; i--) {
     reverseStr += str[i];
   }
 
-  console.log("reverseStr", reverseStr);
-
   for (let i = 0; i < str.length; i++) {
-    console.log(str[i], reverseStr[i]);
-    if (str[i] !== reverseStr[i]) {
-      return false;
-    }
+    if (str[i] !== reverseStr[i]) return false;
   }
 
   return true;
 };
 
-let str = "abcdedcba";
-const result = str.CheckPalindrome();
-
-console.log("result", result);
+const str = "abcdedcba";
+console.log(`"${str}" palindrome?`, str.checkPalindrome());

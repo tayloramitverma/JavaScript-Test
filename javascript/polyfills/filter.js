@@ -1,28 +1,20 @@
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-const getEvenNumber = function (item) {
-  if (item % 2 === 0) {
-    return item;
-  } else {
-    return;
-  }
-};
-
-const filterRes = arr.filter(getEvenNumber);
-console.log(filterRes);
-
 /**
- * Pulifill of array filter method
- * @param {*} callback
- * @param {*} context
- * @returns
+ * Polyfill: Array.prototype.filter
+ * Run: npm run js:polyfill-filter
+ *
+ * filter(callback) → new array with items where callback returns truthy.
+ * Optional: callback.call(context, item, i, arr) for custom `this`.
  */
 
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const getEvenNumber = (item) => item % 2 === 0;
+
+console.log("native filter:", arr.filter(getEvenNumber));
+
 Array.prototype.myFilter = function (callback, context) {
-  console.log("callback", callback);
-  console.log("context", context);
   const newArr = [];
-  for (var i = 0; i < this.length; i++) {
+  for (let i = 0; i < this.length; i++) {
     if (callback.call(context, this[i], i, this)) {
       newArr.push(this[i]);
     }
@@ -30,7 +22,4 @@ Array.prototype.myFilter = function (callback, context) {
   return newArr;
 };
 
-const myFilterRes = arr.myFilter((item, index, items) => {
-  console.log("item", item, index, items);
-}, "args");
-console.log(myFilterRes);
+console.log("myFilter:", arr.myFilter(getEvenNumber));

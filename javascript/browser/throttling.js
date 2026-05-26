@@ -1,16 +1,13 @@
 /**
- * THROTTLING — limits how often a function runs when events fire rapidly.
+ * Throttling — limit how often a handler runs (browser demo)
+ * Open: throttling.html — resize window and watch console
  *
- * Example: resizing the window fires many "resize" events per second.
- * Without throttling, handleWindowResize would run on every pixel change.
- * With throttling (5000ms here), it runs at most once every 5 seconds.
+ * Throttle: first call runs immediately, then ignore until cooldown (5000ms here).
+ * Debounce (see debounce.js): wait until events stop, then run once.
  *
- * Compare to debouncing: debounce waits until events STOP, then runs once.
- * Throttle runs on the first event, then ignores further events until the timer ends.
+ * Run: attach returned function to addEventListener — do NOT call handleWindowResize directly.
  */
-
-// trottleFn returns a wrapped handler; only that returned function is passed to addEventListener.
-window.addEventListener("resize", trottleFn(handleWindowResize, 5000));
+window.addEventListener("resize", throttleFn(handleWindowResize, 5000));
 
 function handleWindowResize() {
   console.log("I'm working now!");

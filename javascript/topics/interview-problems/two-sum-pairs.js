@@ -1,4 +1,11 @@
-// Run: npm run js:two-sum-pairs
+/**
+ * Two sum — all pairs (brute force)
+ * Run: npm run js:two-sum-pairs
+ *
+ * Problem: Find all pairs [a,b] where a + b === target.
+ * Approach: Nested loops i < j to avoid duplicate pairs.
+ * Time: O(n²) — see two-sum-hashmap.js for O(n) index solution.
+ */
 
 function findPairs(array, target) {
   const pairs = [];

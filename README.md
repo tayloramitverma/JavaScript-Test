@@ -48,8 +48,17 @@ Topic-wise theory and notes. Each section links to runnable code under [`javascr
 | `javascript/topics/05-promises/` | `npm run js:promises` | `Promise.all`, `finally` |
 | `javascript/topics/06-this-keyword/` | `npm run js:this` | `this`, call/apply (see polyfills/bind) |
 | `javascript/topics/07-array-methods/` | `npm run js:arrays` | map, filter, find, reduce |
-| `javascript/topics/interview-problems/` | `npm run js:anagram`, etc. | Anagram, primes, palindrome, duplicates |
-| `javascript/polyfills/` | `npm run js:polyfill-map`, etc. | map, filter, reduce, bind |
+| `javascript/topics/10-promise-combinators/` | `npm run js:promise-combinators` | all, allSettled, race, any |
+| `javascript/topics/11-custom-promise/` | `npm run js:custom-promise` | Mini Promise implementation |
+| `javascript/topics/12-debounce/` | `npm run js:debounce` | Debounce (vs throttle in browser) |
+| `javascript/topics/13-type-coercion/` | `npm run js:type-coercion` | == vs ===, typeof, coercion traps |
+| `javascript/topics/14-es6-features/` | `npm run js:es6` | Destructuring, spread, ?., ?? |
+| `javascript/topics/15-map-set/` | `npm run js:map-set` | Map, Set, group-by |
+| `javascript/topics/16-currying/` | `npm run js:currying` | curry(), partial application |
+| `javascript/topics/17-memoization/` | `npm run js:memoization` | memoize(), fib cache |
+| `javascript/topics/18-output-prediction/` | `npm run js:output-prediction` | Hoisting, loops, this, event loop |
+| `javascript/topics/interview-problems/` | `npm run js:anagram`, etc. | + deep-clone, flatten, stack, Kadane, emitter |
+| `javascript/polyfills/` | `npm run js:polyfill-*` | map, filter, reduce, bind, call, apply, flat, allSettled |
 | `javascript/browser/` | Open via `javascript/hub.html` | Callbacks DOM, throttling, Giphy fetch |
 | `typescript/src/` | `npm run ts:build` | Types, interfaces, classes (separate track) |
 
@@ -694,13 +703,16 @@ Falsy:      8 values only
 
 ## Suggested study order (before interview)
 
-1. Phases, hoisting, var/let/const, closures — `npm run js:core`, `npm run js:scope`
-2. `this` + call/apply/bind — `npm run js:this`, `npm run js:polyfill-bind`
-3. Shallow/deep copy + mutability — `npm run js:cloning`, `npm run js:mutable`
-4. Array/object methods — `npm run js:arrays`
-5. Promises, `Promise.all`, async/await — `npm run js:promise-basics`, `npm run js:promises`
-6. Event loop + throttle — `js:core` + browser `throttling.html`
-7. Re-do `javascript/topics/interview-problems/` without looking at solutions
+1. Phases, hoisting, closures — `js:core`, `js:scope`, `js:output-prediction`
+2. Type coercion — `js:type-coercion`
+3. `this` + call/apply/bind — `js:this`, `js:polyfill-call`, `js:polyfill-apply`, `js:polyfill-bind`
+4. Shallow/deep copy + mutability — `js:cloning`, `js:mutable`, `js:deep-clone`
+5. Array/object + ES6 + Map/Set — `js:arrays`, `js:es6`, `js:map-set`
+6. Promises — `js:promise-basics`, `js:promises`, `js:promise-combinators`, `js:custom-promise`
+7. Debounce/throttle — `js:debounce` + browser demos
+8. Currying + memoization — `js:currying`, `js:memoization`
+9. Interview problems — `js:valid-parentheses`, `js:two-sum-hashmap`, `js:event-emitter`, etc.
+10. Polyfills — rewrite `map`, `bind`, `Promise` from memory
 
 ---
 

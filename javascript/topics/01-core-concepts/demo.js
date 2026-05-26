@@ -1,3 +1,17 @@
+/**
+ * Core JavaScript concepts (interview essentials)
+ * Run: npm run js:core
+ *
+ * Topics in this file:
+ * - Falsy vs truthy (8 falsy values only)
+ * - &&, ||, ?? short-circuit (return operands, not always booleans)
+ * - Closures (makeCounter)
+ * - var vs let in loops + setTimeout
+ * - Scope chain & hoisting (scopeDemo / voo)
+ * - Event loop (sync before setTimeout)
+ * - fetch + promise chaining (return inner promises)
+ */
+
 // =============================================================================
 // FALSY VALUES — only these 8 values are falsy in Boolean context (if, &&, ||, !)
 // Everything else is truthy (including "0", "false", [], {}, function() {})

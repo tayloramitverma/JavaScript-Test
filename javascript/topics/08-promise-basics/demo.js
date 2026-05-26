@@ -1,45 +1,46 @@
-// Promises
-// -resolve
-// -reject
-// -pending
+/**
+ * Promises and async/await — states and execution order
+ * Run: npm run js:promise-basics
+ *
+ * Promise states: pending → fulfilled (resolve) OR rejected (reject). Settled = done.
+ *
+ * Watch order for async function `harry()`:
+ *   Before calling → After calling → Last line → Inside harry → before response
+ *   → users resolved → .then on returned promise
+ *
+ * Key: async function ALWAYS returns a Promise. `await` pauses inside that function only.
+ */
 
 function func1() {
   return new Promise(function (resolve, reject) {
     setTimeout(() => {
-      const error = true;
+      const error = true; // flip to false to see resolve path
       if (!error) {
-        console.log("Function: Your promise has been resolved");
+        console.log("func1: resolved");
         resolve();
       } else {
-        console.log("Function: Your promise has not been resolved");
+        console.log("func1: rejected");
         reject("Sorry not fulfilled");
       }
     }, 2000);
   });
 }
 
-//async & await
-
 func1()
-  .then(function () {
-    console.log("Harry: Thanks for resolving");
-  })
-  .catch(function (error) {
-    console.log("Harry: Very bad bro. Reason: " + error);
-  });
+  .then(() => console.log("then: Thanks for resolving"))
+  .catch((error) => console.log("catch: Reason:", error));
 
 async function harry() {
-  console.log("Inside harry function");
+  console.log("Inside harry");
   const response = await fetch("https://api.github.com/users");
-  console.log("before response");
+  console.log("before response (after await fetch)");
   const users = await response.json();
   console.log("users resolved");
   return users;
 }
 
 console.log("Before calling harry");
-let a = harry();
-console.log("After calling harry");
-console.log(a);
-a.then((data) => console.log(data));
-console.log("Last line of this js file");
+let a = harry(); // returns Promise immediately
+console.log("After calling harry — a is a Promise:", typeof a.then === "function");
+a.then((data) => console.log("users length:", data?.length));
+console.log("Last line of file (sync stack ends, then microtasks)");

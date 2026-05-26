@@ -1,3 +1,14 @@
+/**
+ * async/await + Promise.all with parallel API calls
+ * Run: npm run js:async-fetch
+ *
+ * Flow per wordGIF():
+ *   1. fetch random word → 2. fetch Giphy for that word → return { text, img }
+ *
+ * setup() runs 10 wordGIF() in parallel via Promise.all (faster than sequential await).
+ * Browser: open javascript/browser/async-fetch-giphy.html
+ */
+
 let giphyAPI =
   "https://api.giphy.com/v1/gifs/search?api_key=GhlfmlP64keupcoUbhsOYT78r10OSM6H&q=";
 
@@ -70,5 +81,4 @@ function createImg(url) {
   console.log("img:", url);
 }
 
-// Run: npm run js:async-fetch
 setup();

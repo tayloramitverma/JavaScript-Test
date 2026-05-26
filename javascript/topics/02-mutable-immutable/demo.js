@@ -1,11 +1,14 @@
 /**
- * MUTABLE vs IMMUTABLE in JavaScript
+ * Mutable vs immutable in JavaScript
+ * Run: npm run js:mutable
  *
- * Immutable  → value cannot be changed after it is created; "changes" create new values.
- * Mutable    → value can be changed in place (same reference in memory).
+ * Immutable → primitives (number, string, etc.): reassign = new value.
+ * Mutable     → objects/arrays: change in place via same reference.
  *
- * Important: `const` only stops you from REBINDING the variable.
- *            It does NOT make objects/arrays immutable.
+ * Important: `const` only stops REBINDING the variable, not mutating the object.
+ *
+ * Also covers: shallow copy vs shared nested refs, immutable-style updates (spread/map),
+ * Object.freeze (shallow only).
  */
 
 console.log("========== PRIMITIVES (immutable) ==========");

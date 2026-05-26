@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debounce — search input</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 480px; margin: 2rem auto; }
+      input { width: 100%; padding: 0.5rem; font-size: 1rem; }
+      #log { margin-top: 1rem; color: #333; }
+      #log p { margin: 0.25rem 0; padding: 0.25rem; background: #f0f6ff; }
+    </style>
+  </head>
+  <body>
+    <h1>Debounce demo</h1>
+    <p>Type quickly — API log appears only after you pause ~500ms.</p>
+    <input id="search" type="text" placeholder="Search..." />
+    <div id="log"></div>
+    <script src="./debounce.js"></script>
+  </body>
+</html>
