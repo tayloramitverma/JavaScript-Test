@@ -43,7 +43,6 @@ for (let pid of postIds) {
 }
 
 //console.log("promiseArr", promiseArr);
-
 Promise.all(promiseArr)
   .then((results) => {
     console.log("results", results);
