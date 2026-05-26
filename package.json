@@ -1,0 +1,31 @@
+{
+  "name": "javascript-fundamentals-lab",
+  "private": true,
+  "description": "JavaScript interview prep + TypeScript basics (separate tracks)",
+  "scripts": {
+    "js:core": "node javascript/topics/01-core-concepts/demo.js",
+    "js:mutable": "node javascript/topics/02-mutable-immutable/demo.js",
+    "js:cloning": "node javascript/topics/03-objects-cloning/demo.js",
+    "js:scope": "node javascript/topics/04-scope-closures/demo.js",
+    "js:promises": "node javascript/topics/05-promises/demo.js",
+    "js:this": "node javascript/topics/06-this-keyword/demo.js",
+    "js:arrays": "node javascript/topics/07-array-methods/demo.js",
+    "js:promise-basics": "node javascript/topics/08-promise-basics/demo.js",
+    "js:async-fetch": "node javascript/topics/09-async-fetch/demo.js",
+    "js:combine-arrays": "node javascript/topics/interview-problems/combine-arrays.js",
+    "js:promise-all-fetch": "node javascript/topics/interview-problems/promise-all-fetch.js",
+    "js:largest-distance": "node javascript/topics/interview-problems/largest-distance.js",
+    "js:distinct-duplicates": "node javascript/topics/interview-problems/distinct-duplicates.js",
+    "js:anagram": "node javascript/topics/interview-problems/anagram.js",
+    "js:prime-numbers": "node javascript/topics/interview-problems/prime-numbers.js",
+    "js:two-sum-pairs": "node javascript/topics/interview-problems/two-sum-pairs.js",
+    "js:palindrome-maps": "node javascript/topics/interview-problems/palindrome-maps.js",
+    "js:polyfill-map": "node javascript/polyfills/map.js",
+    "js:polyfill-filter": "node javascript/polyfills/filter.js",
+    "js:polyfill-reduce": "node javascript/polyfills/reduce.js",
+    "js:polyfill-bind": "node javascript/polyfills/bind.js",
+    "js:polyfill-palindrome": "node javascript/polyfills/palindrome.js",
+    "ts:build": "tsc -p typescript/tsconfig.json",
+    "ts:watch": "tsc -p typescript/tsconfig.json --watch"
+  }
+}

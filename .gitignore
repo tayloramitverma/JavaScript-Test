@@ -1,1 +1,10 @@
 .DS_Store
+node_modules/
+
+# TypeScript emit
+typescript/build/
+build/
+
+# TypeScript incremental
+*.tsbuildinfo
+tsconfig.tsbuildinfo

@@ -61,3 +61,14 @@ async function wordGIF() {
     text: json1[0],
   };
 }
+
+function createP(text) {
+  console.log("word:", text);
+}
+
+function createImg(url) {
+  console.log("img:", url);
+}
+
+// Run: npm run js:async-fetch
+setup();

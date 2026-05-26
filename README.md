@@ -1,17 +1,57 @@
-# JavaScript Interview Prep Guide
+# JavaScript Fundamentals Lab
 
-Study guide based on your **js-learn1** through **js-learn4** practice folders, expanded with interview theory. Read topic-by-topic; each section links to what you already coded.
+Public learning repo: **JavaScript interview prep** and **TypeScript basics** in two separate tracks.
+
+| Track | Folder | Run |
+|-------|--------|-----|
+| **JavaScript** | [`javascript/`](./javascript/) | `npm run js:core` (see [javascript/README.md](./javascript/README.md)) |
+| **TypeScript** | [`typescript/`](./typescript/) | `npm run ts:build` then open [typescript/index.html](./typescript/index.html) |
+
+## Quick start
+
+```bash
+# JavaScript topic (Node 18+)
+npm run js:scope       # scope & closures
+npm run js:promises
+
+# TypeScript
+npm run ts:build
+```
+
+Browser demos: open [`javascript/hub.html`](./javascript/hub.html) (use Live Server in Cursor/VS Code).
+
+## Repo structure
+
+```text
+├── javascript/     # .js demos, polyfills, browser HTML
+├── typescript/     # .ts → build/ (isolated)
+├── package.json    # js:* and ts:* scripts
+└── README.md       # this file — theory + folder map below
+```
+
+---
+
+## Interview prep guide
+
+Topic-wise theory and notes. Each section links to runnable code under [`javascript/topics/`](./javascript/). Run demos with `npm run js:<topic>` (see [folder map](#folder-map-what-you-practiced) below).
 
 ---
 
 ## Folder map (what you practiced)
 
-| Folder | Files | Main topics |
-|--------|-------|-------------|
-| **js-learn1** | `basic.js`, `mutable-immutable.js`, `objects-cloning.js`, `callback.js`, `promise-basic.js`, `promise.js`, `throttling.js` | Falsy/truthy, closures, event loop, fetch, mutability, cloning, prototypes, callbacks, promises, throttle |
-| **js-learn2** | `main.js` | Arrays, `Promise.all`, string/array interview problems (anagram, prime, palindrome, duplicates) |
-| **js-learn3** | `main.js` | Scope, block scope, char frequency maps |
-| **js-learn4** | `main.js`, `main1.js`, `main2.js` | Promises (`all`, `finally`), `this`, call/apply, `map` vs `filter` vs `find` vs `reduce` |
+| Path | Run | Main topics |
+|------|-----|-------------|
+| `javascript/topics/01-core-concepts/` | `npm run js:core` | Falsy/truthy, closures, event loop, fetch |
+| `javascript/topics/02-mutable-immutable/` | `npm run js:mutable` | Mutability, immutable-style updates |
+| `javascript/topics/03-objects-cloning/` | `npm run js:cloning` | Shallow/deep copy, prototypes, classes |
+| `javascript/topics/04-scope-closures/` | `npm run js:scope` | Block scope, char frequency maps |
+| `javascript/topics/05-promises/` | `npm run js:promises` | `Promise.all`, `finally` |
+| `javascript/topics/06-this-keyword/` | `npm run js:this` | `this`, call/apply (see polyfills/bind) |
+| `javascript/topics/07-array-methods/` | `npm run js:arrays` | map, filter, find, reduce |
+| `javascript/topics/interview-problems/` | `npm run js:anagram`, etc. | Anagram, primes, palindrome, duplicates |
+| `javascript/polyfills/` | `npm run js:polyfill-map`, etc. | map, filter, reduce, bind |
+| `javascript/browser/` | Open via `javascript/hub.html` | Callbacks DOM, throttling, Giphy fetch |
+| `typescript/src/` | `npm run ts:build` | Types, interfaces, classes (separate track) |
 
 ---
 
@@ -654,13 +694,13 @@ Falsy:      8 values only
 
 ## Suggested study order (before interview)
 
-1. Phases, hoisting, var/let/const, closures (**js-learn1** `basic.js`, **js-learn3**)
-2. `this` + call/apply/bind (**js-learn4** `main1.js`)
-3. Shallow/deep copy + mutability (**js-learn1** cloning + mutable files)
-4. Array/object methods (**js-learn4** `main2.js`)
-5. Promises, `Promise.all`, async/await (**js-learn1**, **js-learn4**)
-6. Event loop + throttle (**js-learn1**)
-7. Re-do **js-learn2** problems without looking at solutions
+1. Phases, hoisting, var/let/const, closures — `npm run js:core`, `npm run js:scope`
+2. `this` + call/apply/bind — `npm run js:this`, `npm run js:polyfill-bind`
+3. Shallow/deep copy + mutability — `npm run js:cloning`, `npm run js:mutable`
+4. Array/object methods — `npm run js:arrays`
+5. Promises, `Promise.all`, async/await — `npm run js:promise-basics`, `npm run js:promises`
+6. Event loop + throttle — `js:core` + browser `throttling.html`
+7. Re-do `javascript/topics/interview-problems/` without looking at solutions
 
 ---
 
