@@ -7,9 +7,9 @@ function getCombine(arrOne, arrTwo) {
     combinedArr.push(arrOne[i]);
   }
 
-  for (let num of arrTwo) {
-    combinedArr.push(num);
-  }
+  // for (let num of arrTwo) {
+  //   combinedArr.push(num);
+  // }
 
   combinedArr.sort();
 
